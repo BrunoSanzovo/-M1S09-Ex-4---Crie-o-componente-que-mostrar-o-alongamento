@@ -55,7 +55,7 @@ function showExercise() {
         const currentExercise = stretchExercises[index];
         addToCompletedExercises(currentExercise);
         index = (index + 1) % stretchExercises.length;
-    }, 5 * 1 * 1000); // 5 minutus
+    }, 5 * 60 * 1000); // 5 minutus
 }
 
 function completeExercise() {
