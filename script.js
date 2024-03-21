@@ -11,6 +11,9 @@ let stretchInterval;
 let completedExercises = [];
 
 const stretchExercises = [
+    "Faça 100x flexões",
+    "Faça 100x abdominais",
+    "100x agachamentos",
     "Levante-se e estique os braços acima da cabeça por 10 segundos.",
     "Incline o tronco para os lados, mantendo o alongamento por 15 segundos em cada lado.",
     "Gire os ombros para trás em movimentos circulares por 20 segundos.",
@@ -52,18 +55,35 @@ function showExercise() {
         const currentExercise = stretchExercises[index];
         addToCompletedExercises(currentExercise);
         index = (index + 1) % stretchExercises.length;
-    }, 5 * 1000); // 5 segundos
+    }, 5 * 1 * 1000); // 5 minutus
+}
+
+function completeExercise() {
+    const currentExercise = stretchExercises.find(exercise => exercise === exerciseDescription.textContent.replace('Exercício de Alongamento: ', ''));
+    if (currentExercise && !completedExercises.includes(currentExercise)) {
+        completedExercises.push(currentExercise);
+        addToCompletedExercises(currentExercise);
+    }
+    completeExerciseButton.style.display = 'none';
 }
 
 function addToCompletedExercises(exercise) {
     const li = document.createElement('li');
-    li.textContent = exercise;
+    const minutes = Math.floor(remainingTime / 60);
+    const seconds = remainingTime % 60;
+    const timeElapsed = `${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+    li.textContent = `${exercise} - Tempo: ${timeElapsed}`;
     const img = document.createElement('img');
     img.src = 'assets/tarefaicon01.jpeg';
     img.alt = 'checkmark';
     img.className = 'task-img';
     li.appendChild(img);
     completedExercisesList.appendChild(li);
+
+    // Adiciona classe automaticamente para destacar exercícios concluídos após 20 segundos
+    setTimeout(() => {
+        li.classList.add('completed');
+    }, 60000);
 }
 
 startButton.addEventListener('click', startTimer);
