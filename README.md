@@ -13,7 +13,7 @@ O projeto inclui recursos como criação de timer, consumo de API para sugestõe
 Será oferecido ao usuário um intervalo de 5 minutos a cada 25 minutos, durante o qual serão sugeridos alguns alongamentos para preservar o bem-estar do usuário.
 Ao término desses 5 minutos, o site guardará o último exercício realizado, para que, após 25 minutos, o sistema possa sugerir exercícios diferentes, evitando repetições de alongamentos.
 
-<img src="https://github.com/franciscogrimes/pomodoro_project/assets/150201451/9ecd878e-82ed-4a79-86c8-4e7dace944a9.jpg" alt="Exemplo de imagem" width="400px" height="300px">
+<img src="https://github.com/BrunoSanzovo/-M1S09-Ex-4---Crie-o-componente-que-mostrar-o-alongamento.git/assets/150201451/9ecd878e-82ed-4a79-86c8-4e7dace944a9.jpg" alt="Exemplo de imagem" width="400px" height="300px">
 
 ## Tecnologias Utilizadas👨🏽‍💻
 
